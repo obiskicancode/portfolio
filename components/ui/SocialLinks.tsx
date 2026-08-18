@@ -5,17 +5,17 @@ import { Mail } from 'lucide-react'
 export const socialLinks = [
   {
     name: 'GitHub',
-    url: 'https://github.com/Obiski15',
+    url: 'https://github.com/obiskicancode',
     icon: GithubIcon,
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/in/obiski15',
+    url: 'https://linkedin.com/in/obiskicancode',
     icon: LinkedinIcon,
   },
   {
     name: 'X (Twitter)',
-    url: 'https://x.com/_obiski',
+    url: 'https://x.com/obiskicancode',
     icon: XIcon,
   },
   {

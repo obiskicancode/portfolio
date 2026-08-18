@@ -14,5 +14,5 @@ I am a Fullstack Developer and based in Lagos. I specialize in building scalable
 
 ## 📫 Connect With Me
 * **Portfolio:** [obiski.vercel.app](https://obiski.vercel.app)
-* **LinkedIn:** [https://linkedin.com/in/obiski15](https://www.linkedin.com/in/obiski15/)
+* **LinkedIn:** [https://linkedin.com/in/obiskicancode](https://www.linkedin.com/in/obiskicancode/)
 * **Email:** [obiski15@gmail.com](mailto:obiski15@gmail.com)

@@ -64,7 +64,7 @@ export const projects: IProject[] = [
       },
     },
     links: {
-      github: 'https://github.com/Obiski15/Headless-Commerce-Engine',
+      github: 'https://github.com/obiskicancode/Headless-Commerce-Engine',
       live: '',
     },
   },
@@ -90,7 +90,7 @@ export const projects: IProject[] = [
       },
     },
     links: {
-      github: 'https://github.com/Obiski15/Origin',
+      github: 'https://github.com/obiskicancode/Origin',
       live: '',
     },
   },
@@ -116,7 +116,7 @@ export const projects: IProject[] = [
       },
     },
     links: {
-      github: 'https://github.com/Obiski15/Distributed-Notification-System',
+      github: 'https://github.com/obiskicancode/Distributed-Notification-System',
       live: '',
     },
   },
@@ -135,7 +135,7 @@ export const projects: IProject[] = [
       },
     },
     links: {
-      github: 'https://github.com/Obiski15/log-analyzer-agent',
+      github: 'https://github.com/obiskicancode/log-analyzer-agent',
       live: '',
     },
   },
@@ -157,7 +157,7 @@ export const projects: IProject[] = [
       },
     },
     links: {
-      github: 'https://github.com/Obiski15/Paystack-Wallet-Service',
+      github: 'https://github.com/obiskicancode/Paystack-Wallet-Service',
       live: '',
     },
   },
@@ -183,7 +183,7 @@ export const projects: IProject[] = [
       },
     },
     links: {
-      github: 'https://github.com/Obiski15/link-sharing-app/',
+      github: 'https://github.com/obiskicancode/link-sharing-app/',
       live: 'https://tinyurl.com/cah2yhdh',
     },
   },
@@ -209,7 +209,7 @@ export const projects: IProject[] = [
       },
     },
     links: {
-      github: 'https://github.com/Obiski15/notes',
+      github: 'https://github.com/obiskicancode/notes',
       live: 'https://tinyurl.com/e65r9cdd',
     },
   },

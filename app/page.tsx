@@ -10,7 +10,7 @@ interface GithubRepo {
 
 async function getGithubRepoCount() {
   try {
-    const res = await fetch('https://api.github.com/users/obiski15/repos?per_page=100', {
+    const res = await fetch('https://api.github.com/users/obiskicancode/repos?per_page=100', {
       next: { revalidate: 3600 },
     })
     if (!res.ok) return '7+'

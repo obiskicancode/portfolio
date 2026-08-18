@@ -2,11 +2,11 @@ import BackToTop from '@/components/ui/BackToTop'
 import Footer from '@/components/ui/Footer'
 import Navigation from '@/components/ui/Navigation'
 import { Toaster } from '@/components/ui/sonner'
+import config from '@/config'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
 import { Geist, Geist_Mono } from 'next/font/google'
-import config from '@/config'
 import './globals.css'
 
 const geist = Geist({
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     description:
       'Full-Stack Product Engineer building scalable systems and exceptional digital products.',
     images: ['/images/og-image.webp'],
-    creator: '@_obiski',
+    creator: '@obiskicancode',
   },
   robots: {
     index: true,
@@ -67,9 +67,9 @@ const personJsonLd = {
   image: `${config.SITE.baseUrl}/images/me.webp`,
   jobTitle: 'Product Engineer & Full-Stack Developer',
   sameAs: [
-    'https://github.com/Obiski15',
-    'https://linkedin.com/in/obiski15',
-    'https://x.com/_obiski',
+    'https://github.com/obiskicancode',
+    'https://linkedin.com/in/obiskicancode',
+    'https://x.com/obiskicancode',
   ],
   knowsAbout: [
     'Backend Architecture',
