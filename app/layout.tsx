@@ -58,6 +58,46 @@ export const metadata: Metadata = {
   },
 }
 
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Obi Emmanuel',
+  alternateName: 'Obiski',
+  url: config.SITE.baseUrl,
+  image: `${config.SITE.baseUrl}/images/me.webp`,
+  jobTitle: 'Product Engineer & Full-Stack Developer',
+  sameAs: [
+    'https://github.com/Obiski15',
+    'https://linkedin.com/in/obiski15',
+    'https://x.com/_obiski',
+  ],
+  knowsAbout: [
+    'Backend Architecture',
+    'NestJS',
+    'Fastify',
+    'Next.js',
+    'TypeScript',
+    'Distributed Systems',
+    'RabbitMQ',
+    'Docker',
+    'PostgreSQL',
+    'Redis',
+  ],
+}
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Obiski | Product Engineer',
+  url: config.SITE.baseUrl,
+  author: {
+    '@type': 'Person',
+    name: 'Obi Emmanuel',
+  },
+  description:
+    'Portfolio of Obiski — a Full-Stack Product Engineer who builds scalable systems and exceptional digital products.',
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -65,6 +105,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+      </head>
       <body
         className={`${geist.variable} ${geistMono.variable} font-sans min-h-screen bg-zinc-50 text-zinc-900 antialiased`}
         suppressHydrationWarning
