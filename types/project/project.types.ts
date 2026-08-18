@@ -41,7 +41,9 @@ export type StackTypes =
   | 'Logstash'
   | 'Kibana'
   | 'Jaeger'
-
+  | 'Ollama'
+  | 'Gemma 4'
+  | 'Whisper'
 export interface IProjectStack {
   backend?: {
     languages?: StackTypes[]

@@ -33,6 +33,10 @@ function getTransporter(): Transporter {
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
+interface SmtpError extends Error {
+  responseCode?: number
+}
+
 async function send_mail({
   from = config.MAIL.account,
   to,
@@ -55,12 +59,12 @@ async function send_mail({
         ...rest,
       })
       return result
-    } catch (error: any) {
+    } catch (err: unknown) {
+      const error = err as SmtpError
       attempt++
       
-      // Do not retry on obvious validation/auth failures if they are known, 
-      // but typical transient network/smtp errors should be retried.
-      const isTransient = !error.responseCode || (error.responseCode >= 400 && error.responseCode < 500 === false)
+      // Do not retry on 4xx client/auth errors (400-499), but retry 5xx server errors or transient network failures
+      const isTransient = !error.responseCode || error.responseCode >= 500
       
       if (!isTransient || attempt >= MAX_RETRIES) {
         console.error(`[Mail Service] Failed to send email to ${to} after ${attempt} attempts:`, error)

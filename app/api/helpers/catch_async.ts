@@ -3,7 +3,7 @@ import { AppError } from '../errors/app.error'
 import { error_handler } from './error_handler'
 import { rate_limit } from './rate_limit'
 
-export const catch_async = async (
+export const catch_async = (
   fn: (request: NextRequest) => Promise<NextResponse>,
 ) => {
   return async (request: NextRequest) => {

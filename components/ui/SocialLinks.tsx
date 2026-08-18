@@ -1,4 +1,5 @@
 import { GithubIcon, LinkedinIcon, XIcon } from '@/components/icons/SocialIcons'
+import config from '@/config'
 import { Mail } from 'lucide-react'
 
 export const socialLinks = [
@@ -19,7 +20,7 @@ export const socialLinks = [
   },
   {
     name: 'Email',
-    url: 'mailto:obiski15@gmail.com',
+    url: `mailto:${config.SITE.contactAddress}`,
     icon: Mail,
   },
 ]
@@ -37,9 +38,10 @@ export default function SocialLinks({ className = '', iconSize = 20 }: SocialLin
           key={social.name}
           href={social.url}
           target={social.name === 'Email' ? '_self' : '_blank'}
-          rel={social.name === 'Email' ? '' : 'noopener noreferrer'}
+          rel={social.name === 'Email' ? '' : 'noopener noreferrer me'}
           aria-label={social.name}
-          className="group inline-flex items-center justify-center p-2 text-zinc-500 transition-all duration-300 hover:text-emerald-400 active:scale-95"
+          title={social.name}
+          className="group inline-flex items-center justify-center p-2 text-zinc-600 transition-all duration-300 hover:text-emerald-600 active:scale-95"
         >
           <social.icon size={iconSize} className="transition-transform group-hover:-translate-y-0.5" />
         </a>

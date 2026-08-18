@@ -2,7 +2,7 @@
 
 import SocialLinks from '@/components/ui/SocialLinks'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
-import { ArrowRight, Mail } from 'lucide-react'
+import { ArrowRight, Download, Mail } from 'lucide-react'
 import Image from 'next/image'
 import { useRef } from 'react'
 
@@ -53,16 +53,16 @@ export default function HeroSection() {
     >
       {/* Ambient glow effects */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/4 top-1/4 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-emerald-500/[0.07] blur-[120px]" />
+        <div className="absolute left-1/4 top-1/4 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-emerald-500/[0.06] blur-[120px]" />
         <div className="absolute right-0 top-0 h-[400px] w-[400px] rounded-full bg-emerald-600/[0.04] blur-[100px]" />
-        <div className="absolute bottom-0 left-0 h-[300px] w-[300px] rounded-full bg-zinc-500/[0.03] blur-[80px]" />
+        <div className="absolute bottom-0 left-0 h-[300px] w-[300px] rounded-full bg-zinc-300/[0.3] blur-[80px]" />
       </div>
 
       {/* Grid background */}
       <div className="bg-grid pointer-events-none absolute inset-0 opacity-60" />
 
       {/* Gradient fade at bottom */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-zinc-950 to-transparent" />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-zinc-50 to-transparent" />
 
       <div className="relative z-10 container mx-auto max-w-6xl px-6">
         <div className="flex flex-col-reverse items-center gap-16 lg:flex-row lg:items-center lg:justify-between">
@@ -74,7 +74,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="mb-6 font-mono text-sm tracking-wider text-emerald-400"
+              className="mb-6 font-mono text-sm tracking-wider text-emerald-600"
             >
               Product Engineer &amp; Full-Stack Developer
             </motion.p>
@@ -84,11 +84,11 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-4xl font-semibold leading-[1.1] tracking-tight text-zinc-100 sm:text-5xl md:text-6xl lg:text-7xl"
+              className="text-4xl font-semibold leading-[1.1] tracking-tight text-zinc-900 sm:text-5xl md:text-6xl lg:text-7xl"
             >
               Building scalable systems{' '}
               <br className="hidden md:block" />
-              <span className="bg-gradient-to-r from-emerald-400 via-emerald-300 to-teal-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 bg-clip-text text-transparent">
                 &amp; exceptional products.
               </span>
             </motion.h1>
@@ -108,11 +108,11 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center"
+              className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:flex-wrap"
             >
               <a
                 href="#projects"
-                className="group inline-flex items-center gap-2 rounded-full bg-emerald-500 px-7 py-3.5 text-sm font-medium text-zinc-950 transition-all duration-300 hover:bg-emerald-400 hover:shadow-[0_0_20px_rgba(16,185,129,0.3)] active:scale-95"
+                className="group inline-flex items-center gap-2 rounded-full bg-emerald-600 px-7 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:bg-emerald-500 hover:shadow-[0_0_20px_rgba(5,150,105,0.25)] active:scale-95"
               >
                 View Projects
                 <ArrowRight
@@ -122,10 +122,18 @@ export default function HeroSection() {
               </a>
               <a
                 href="#contact"
-                className="group inline-flex items-center gap-2 rounded-full border border-white/[0.1] bg-white/[0.03] px-7 py-3.5 text-sm font-medium text-zinc-300 transition-all duration-300 hover:border-white/[0.2] hover:bg-white/[0.08] hover:text-zinc-100 active:scale-95"
+                className="group inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-7 py-3.5 text-sm font-medium text-zinc-600 shadow-sm transition-all duration-300 hover:border-zinc-300 hover:bg-zinc-50 hover:text-zinc-900 active:scale-95"
               >
-                <Mail size={16} className="text-zinc-500 transition-colors group-hover:text-zinc-300" />
+                <Mail size={16} className="text-zinc-400 transition-colors group-hover:text-zinc-600" />
                 Let&apos;s Talk
+              </a>
+              <a
+                href="/doc/obi_emmanuel_resume.pdf"
+                download
+                className="group inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-7 py-3.5 text-sm font-medium text-zinc-600 shadow-sm transition-all duration-300 hover:border-zinc-300 hover:bg-zinc-50 hover:text-zinc-900 active:scale-95"
+              >
+                <Download size={16} className="text-zinc-400 transition-colors group-hover:text-zinc-600" />
+                Download CV
               </a>
             </motion.div>
 
@@ -159,17 +167,17 @@ export default function HeroSection() {
             >
               {/* Glow behind portrait */}
               <div className="absolute -inset-4 rounded-3xl bg-emerald-500/10 blur-2xl" />
-              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-emerald-500/20 via-teal-500/10 to-transparent blur-xl" />
+              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-emerald-500/15 via-teal-500/10 to-transparent blur-xl" />
 
               {/* Portrait card */}
-              <div className="relative h-72 w-60 overflow-hidden rounded-3xl border border-white/[0.08] bg-zinc-900/60 shadow-2xl shadow-black/40 backdrop-blur-sm sm:h-80 sm:w-64 lg:h-96 lg:w-72">
+              <div className="relative h-72 w-60 overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-xl shadow-zinc-200/50 sm:h-80 sm:w-64 lg:h-96 lg:w-72">
                 {/* Inner gradient overlay — subtle depth */}
-                <div className="absolute inset-0 z-10 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent" />
-                <div className="absolute inset-0 z-10 bg-gradient-to-br from-emerald-500/[0.04] to-transparent" />
+                <div className="absolute inset-0 z-10 bg-gradient-to-t from-white/50 via-transparent to-transparent" />
+                <div className="absolute inset-0 z-10 bg-gradient-to-br from-emerald-500/[0.03] to-transparent" />
 
                 {/* Portrait image */}
                 <Image
-                  src="/images/me.png"
+                  src="/images/me.webp"
                   alt="Obiski — Full-Stack Product Engineer"
                   fill
                   priority
@@ -179,9 +187,9 @@ export default function HeroSection() {
 
                 {/* Bottom label */}
                 <div className="absolute bottom-4 left-4 right-4 z-20">
-                  <div className="rounded-xl border border-white/[0.08] bg-zinc-950/70 px-4 py-2.5 backdrop-blur-md">
-                    <p className="text-xs font-semibold text-zinc-100">Obi Emmanuel</p>
-                    <p className="font-mono text-[10px] text-emerald-400">Full-Stack Product Engineer</p>
+                  <div className="rounded-xl border border-zinc-200/80 bg-white/80 px-4 py-2.5 backdrop-blur-md shadow-sm">
+                    <p className="text-xs font-semibold text-zinc-900">Obi Emmanuel</p>
+                    <p className="font-mono text-[10px] text-emerald-600">Full-Stack Product Engineer</p>
                   </div>
                 </div>
               </div>
@@ -191,13 +199,13 @@ export default function HeroSection() {
                 initial={{ opacity: 0, x: 10, y: -10 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 transition={{ delay: 0.9, duration: 0.5 }}
-                className="absolute -right-5 -top-4 z-20 flex items-center gap-2 rounded-full border border-white/[0.08] bg-zinc-900/80 px-3 py-2 shadow-lg backdrop-blur-md"
+                className="absolute -right-5 -top-4 z-20 flex items-center gap-2 rounded-full border border-zinc-200 bg-white/90 px-3 py-2 shadow-md backdrop-blur-md"
               >
                 <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
                 </span>
-                <span className="font-mono text-[10px] text-zinc-300">Open to Select Opportunities</span>
+                <span className="font-mono text-[10px] text-zinc-600">Open to Select Opportunities</span>
               </motion.div>
             </motion.div>
           </motion.div>

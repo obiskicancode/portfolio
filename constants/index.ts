@@ -45,7 +45,7 @@ export const stack: IProjectStack = {
 export const projects: IProject[] = [
   {
     name: 'W-Commerce',
-    image: 'w-commerce.png',
+    image: 'w-commerce.webp',
     description:
       'W-Commerce is a headless commerce engine built for social sellers, designed to power sales through messaging platforms like WhatsApp using AI',
     type: ProjectType.API,
@@ -69,9 +69,35 @@ export const projects: IProject[] = [
     },
   },
   {
+    name: 'Origin',
+    image: 'origin.webp',
+    description:
+      'An AI-powered student evaluation system utilizing local LLMs and transcription models to automatically verify student defenses.',
+    type: ProjectType.API,
+    status: ProjectStatus.LIVE,
+    stack: {
+      backend: {
+        languages: ['TypeScript', 'Python'],
+        frameworks: ['NestJS'],
+        tools: ['Ollama', 'Gemma 4', 'Whisper'],
+      },
+      frontend: {
+        languages: ['TypeScript'],
+        frameworks: ['Next.js'],
+      },
+      infrastructure: {
+        virtualization: ['Docker'],
+      },
+    },
+    links: {
+      github: 'https://github.com/Obiski15/Origin',
+      live: '',
+    },
+  },
+  {
     name: 'Distributed Notification System',
     abbreviation: 'DNS',
-    image: 'dns.png',
+    image: 'dns.webp',
     description:
       'A scalable microservice system that can handle high volumes of notifications across multiple channels (Email, push)',
     status: ProjectStatus.LIVE,
@@ -96,7 +122,7 @@ export const projects: IProject[] = [
   },
   {
     name: 'Log Analyser Agent',
-    image: 'log-analyser.png',
+    image: 'log-analyser.webp',
     description:
       'An intelligent AI-powered log analysis system built that analyzes server logs, detects issues, and provides actionable recommendations.',
     type: ProjectType.API,
@@ -115,7 +141,7 @@ export const projects: IProject[] = [
   },
   {
     name: 'Paystack Wallet Service',
-    image: 'paystack-wallet.png',
+    image: 'paystack-wallet.webp',
     type: ProjectType.API,
     status: ProjectStatus.LIVE,
     description:
@@ -137,7 +163,7 @@ export const projects: IProject[] = [
   },
   {
     name: 'DevLinks',
-    image: 'devlinks.png',
+    image: 'devlinks.webp',
     type: ProjectType.WEB,
     status: ProjectStatus.LIVE,
     description:
@@ -163,7 +189,7 @@ export const projects: IProject[] = [
   },
   {
     name: 'Notes',
-    image: 'notes.png',
+    image: 'notes.webp',
     description:
       'A cross-platform notes app to capture, manage, and sync your ideas across all devices.',
     type: ProjectType.WEB,

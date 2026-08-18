@@ -27,7 +27,7 @@ export default function ExpertiseSection() {
   return (
     <section id="expertise" className="relative py-28">
       {/* Top gradient divider */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-zinc-200 to-transparent" />
 
       {/* Ambient glow */}
       <div className="pointer-events-none absolute right-0 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-emerald-500/[0.03] blur-[100px]" />
@@ -45,16 +45,16 @@ export default function ExpertiseSection() {
               <GlowCard className="h-full">
                 <div className="p-8">
                   <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10">
-                    <group.icon size={20} className="text-emerald-400" />
+                    <group.icon size={20} className="text-emerald-600" />
                   </div>
-                  <h3 className="mb-5 text-base font-semibold text-zinc-200">
+                  <h3 className="mb-5 text-base font-semibold text-zinc-900">
                     {group.category}
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {group.items.map((item) => (
                       <span
                         key={item}
-                        className="rounded-lg border border-white/[0.04] bg-white/[0.03] px-3 py-1.5 text-sm text-zinc-400 transition-colors hover:border-white/[0.08] hover:text-zinc-300"
+                        className="rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-1.5 text-sm text-zinc-600 transition-colors hover:border-zinc-300 hover:text-zinc-900"
                       >
                         {item}
                       </span>

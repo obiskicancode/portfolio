@@ -53,7 +53,7 @@ export default function Navigation() {
         className={cn(
           'fixed top-0 z-50 w-full transition-all duration-500',
           scrolled
-            ? 'bg-zinc-950/70 backdrop-blur-xl border-b border-white/[0.06] py-4'
+            ? 'bg-white/80 backdrop-blur-xl border-b border-zinc-200/80 py-4 shadow-sm'
             : 'bg-transparent py-6'
         )}
       >
@@ -63,8 +63,8 @@ export default function Navigation() {
             href="/"
             className="group relative text-lg font-semibold tracking-tight"
           >
-            <span className="text-zinc-100">Obiski</span>
-            <span className="text-emerald-400 transition-colors group-hover:text-emerald-300">
+            <span className="text-zinc-900">Obiski</span>
+            <span className="text-emerald-600 transition-colors group-hover:text-emerald-500">
               .
             </span>
           </Link>
@@ -78,14 +78,14 @@ export default function Navigation() {
                 className={cn(
                   'relative rounded-full px-4 py-2 text-sm font-medium transition-colors',
                   activeSection === link.href.slice(1)
-                    ? 'text-zinc-100'
-                    : 'text-zinc-500 hover:text-zinc-300'
+                    ? 'text-zinc-900'
+                    : 'text-zinc-500 hover:text-zinc-900'
                 )}
               >
                 {activeSection === link.href.slice(1) && (
                   <motion.span
                     layoutId="activeNav"
-                    className="absolute inset-0 rounded-full bg-white/[0.06]"
+                    className="absolute inset-0 rounded-full bg-zinc-100"
                     transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                   />
                 )}
@@ -97,7 +97,7 @@ export default function Navigation() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="relative z-50 flex h-10 w-10 items-center justify-center rounded-lg text-zinc-400 transition-colors hover:text-zinc-100 md:hidden"
+            className="relative z-50 flex h-10 w-10 items-center justify-center rounded-lg text-zinc-500 transition-colors hover:text-zinc-900 md:hidden"
             aria-label="Toggle menu"
           >
             <AnimatePresence mode="wait" initial={false}>
@@ -135,7 +135,7 @@ export default function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-zinc-950/90 backdrop-blur-xl md:hidden"
+            className="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl md:hidden"
           >
             <nav className="flex h-full flex-col items-center justify-center gap-8">
               {navLinks.map((link, i) => (
@@ -149,7 +149,7 @@ export default function Navigation() {
                   <Link
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="text-3xl font-semibold tracking-tight text-zinc-300 transition-colors hover:text-emerald-400"
+                    className="text-3xl font-semibold tracking-tight text-zinc-700 transition-colors hover:text-emerald-600"
                   >
                     {link.label}
                   </Link>

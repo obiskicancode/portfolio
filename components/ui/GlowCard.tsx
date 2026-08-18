@@ -29,8 +29,8 @@ export default function GlowCard({ children, className }: GlowCardProps) {
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
       className={cn(
-        'group relative overflow-hidden rounded-2xl border border-white/[0.04] bg-zinc-900/40 transition-all duration-500',
-        'hover:-translate-y-1 hover:border-white/[0.1] hover:bg-zinc-900/60 hover:shadow-2xl hover:shadow-emerald-500/[0.03]',
+        'group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition-all duration-500',
+        'hover:-translate-y-1 hover:border-zinc-300 hover:shadow-lg hover:shadow-emerald-500/[0.05]',
         className
       )}
     >
@@ -39,7 +39,7 @@ export default function GlowCard({ children, className }: GlowCardProps) {
         <div
           className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           style={{
-            background: `radial-gradient(400px circle at ${glowPosition.x}px ${glowPosition.y}px, rgba(16, 185, 129, 0.06), transparent 60%)`,
+            background: `radial-gradient(400px circle at ${glowPosition.x}px ${glowPosition.y}px, rgba(5, 150, 105, 0.06), transparent 60%)`,
           }}
         />
       )}

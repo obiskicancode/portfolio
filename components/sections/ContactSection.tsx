@@ -7,6 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { ArrowRight, CheckCircle2, Loader2, Mail, MessageSquare, User } from 'lucide-react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { toast } from 'sonner'
 
 export default function ContactSection() {
   const [submitError, setSubmitError] = useState<string | null>(null)
@@ -40,6 +41,7 @@ export default function ContactSection() {
       }
 
       setIsSuccess(true)
+      toast.success('Message sent successfully! I will be in touch soon.')
       reset()
       
       // Reset success state after a few seconds
@@ -47,27 +49,29 @@ export default function ContactSection() {
         setIsSuccess(false)
       }, 5000)
     } catch (error) {
-      setSubmitError(error instanceof Error ? error.message : 'An error occurred')
+      const msg = error instanceof Error ? error.message : 'An error occurred'
+      setSubmitError(msg)
+      toast.error(msg)
     }
   }
 
   return (
     <section id="contact" className="relative py-28">
       {/* Top gradient divider */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-zinc-200 to-transparent" />
 
       {/* Ambient glow */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-500/[0.04] blur-[120px]" />
 
       <div className="relative z-10 container mx-auto max-w-2xl px-6 text-center">
         <ScrollReveal>
-          <p className="mb-3 font-mono text-sm tracking-wider text-emerald-400">
+          <p className="mb-3 font-mono text-sm tracking-wider text-emerald-600">
             Contact
           </p>
-          <h2 className="text-3xl font-semibold tracking-tight text-zinc-100 sm:text-4xl">
+          <h2 className="text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
             Let&apos;s build something exceptional.
           </h2>
-          <p className="mt-4 text-lg text-zinc-500">
+          <p className="mt-4 text-lg text-zinc-600">
             Currently available for freelance opportunities and serious roles.
           </p>
           <div className="mt-8 flex justify-center">
@@ -82,18 +86,20 @@ export default function ContactSection() {
           >
             {/* Name */}
             <div>
+              <label htmlFor="contact-name" className="sr-only">Name</label>
               <div className="group relative">
-                <div className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-zinc-600 transition-colors group-focus-within:text-emerald-500">
+                <div className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-zinc-600 transition-colors group-focus-within:text-emerald-600">
                   <User size={16} />
                 </div>
                 <input
                   {...register('name')}
+                  id="contact-name"
                   type="text"
                   placeholder="Name"
-                  className={`w-full rounded-xl border bg-white/[0.03] py-3.5 pl-11 pr-4 text-sm text-zinc-100 placeholder:text-zinc-600 transition-all hover:bg-white/[0.04] focus:bg-white/[0.05] focus:outline-none focus:ring-1 ${
+                  className={`w-full rounded-xl border bg-zinc-50 py-3.5 pl-11 pr-4 text-sm text-zinc-900 placeholder:text-zinc-500 transition-all hover:bg-zinc-100 focus:bg-white focus:outline-none focus:ring-1 ${
                     errors.name
                       ? 'border-red-500/50 focus:border-red-500/50 focus:ring-red-500/20'
-                      : 'border-white/[0.06] hover:border-white/[0.1] focus:border-emerald-500/40 focus:ring-emerald-500/20'
+                      : 'border-zinc-200 hover:border-zinc-300 focus:border-emerald-600/40 focus:ring-emerald-600/20'
                   }`}
                 />
               </div>
@@ -106,18 +112,20 @@ export default function ContactSection() {
 
             {/* Email */}
             <div>
+              <label htmlFor="contact-email" className="sr-only">Email</label>
               <div className="group relative">
-                <div className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-zinc-600 transition-colors group-focus-within:text-emerald-500">
+                <div className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-zinc-600 transition-colors group-focus-within:text-emerald-600">
                   <Mail size={16} />
                 </div>
                 <input
                   {...register('email')}
+                  id="contact-email"
                   type="email"
                   placeholder="Email"
-                  className={`w-full rounded-xl border bg-white/[0.03] py-3.5 pl-11 pr-4 text-sm text-zinc-100 placeholder:text-zinc-600 transition-all hover:bg-white/[0.04] focus:bg-white/[0.05] focus:outline-none focus:ring-1 ${
+                  className={`w-full rounded-xl border bg-zinc-50 py-3.5 pl-11 pr-4 text-sm text-zinc-900 placeholder:text-zinc-500 transition-all hover:bg-zinc-100 focus:bg-white focus:outline-none focus:ring-1 ${
                     errors.email
                       ? 'border-red-500/50 focus:border-red-500/50 focus:ring-red-500/20'
-                      : 'border-white/[0.06] hover:border-white/[0.1] focus:border-emerald-500/40 focus:ring-emerald-500/20'
+                      : 'border-zinc-200 hover:border-zinc-300 focus:border-emerald-600/40 focus:ring-emerald-600/20'
                   }`}
                 />
               </div>
@@ -130,18 +138,20 @@ export default function ContactSection() {
 
             {/* Message */}
             <div>
+              <label htmlFor="contact-message" className="sr-only">Message</label>
               <div className="group relative">
-                <div className="pointer-events-none absolute left-4 top-4 text-zinc-600 transition-colors group-focus-within:text-emerald-500">
+                <div className="pointer-events-none absolute left-4 top-4 text-zinc-600 transition-colors group-focus-within:text-emerald-600">
                   <MessageSquare size={16} />
                 </div>
                 <textarea
                   {...register('message')}
+                  id="contact-message"
                   rows={5}
                   placeholder="Tell me about your project..."
-                  className={`w-full resize-none rounded-xl border bg-white/[0.03] py-3.5 pl-11 pr-4 text-sm text-zinc-100 placeholder:text-zinc-600 transition-all hover:bg-white/[0.04] focus:bg-white/[0.05] focus:outline-none focus:ring-1 ${
+                  className={`w-full resize-none rounded-xl border bg-zinc-50 py-3.5 pl-11 pr-4 text-sm text-zinc-900 placeholder:text-zinc-500 transition-all hover:bg-zinc-100 focus:bg-white focus:outline-none focus:ring-1 ${
                     errors.message
                       ? 'border-red-500/50 focus:border-red-500/50 focus:ring-red-500/20'
-                      : 'border-white/[0.06] hover:border-white/[0.1] focus:border-emerald-500/40 focus:ring-emerald-500/20'
+                      : 'border-zinc-200 hover:border-zinc-300 focus:border-emerald-600/40 focus:ring-emerald-600/20'
                   }`}
                 />
               </div>
@@ -159,9 +169,8 @@ export default function ContactSection() {
               </p>
             )}
 
-            {/* Success Message */}
             {isSuccess && (
-              <p className="flex items-center justify-center gap-2 rounded-lg border border-emerald-500/20 bg-emerald-500/10 p-3 text-sm text-emerald-400">
+              <p className="flex items-center justify-center gap-2 rounded-lg border border-emerald-600/20 bg-emerald-50 p-3 text-sm text-emerald-600">
                 <CheckCircle2 size={16} />
                 Message sent successfully! I&apos;ll be in touch soon.
               </p>
@@ -173,8 +182,8 @@ export default function ContactSection() {
               disabled={isSubmitting || isSuccess}
               className={`group mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl px-8 py-3.5 text-sm font-medium transition-all duration-300 ${
                 isSuccess
-                  ? 'bg-zinc-800 text-zinc-500 cursor-not-allowed'
-                  : 'bg-emerald-500 text-zinc-950 hover:bg-emerald-400 hover:shadow-[0_0_20px_rgba(16,185,129,0.3)] active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed disabled:active:scale-100'
+                  ? 'bg-zinc-200 text-zinc-500 cursor-not-allowed'
+                  : 'bg-emerald-600 text-white hover:bg-emerald-500 hover:shadow-[0_0_20px_rgba(5,150,105,0.25)] active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed disabled:active:scale-100'
               }`}
             >
               {isSubmitting ? (
@@ -196,14 +205,6 @@ export default function ContactSection() {
             </button>
           </form>
         </ScrollReveal>
-      </div>
-
-      {/* Footer */}
-      <div className="relative z-10 container mx-auto mt-24 max-w-6xl px-6">
-        <div className="flex flex-col items-center justify-between gap-6 border-t border-white/[0.06] pt-8 pb-12 sm:flex-row sm:pb-8">
-          <p className="text-sm text-zinc-600">© {new Date().getFullYear()} Obiski. All rights reserved.</p>
-          <SocialLinks iconSize={18} />
-        </div>
       </div>
     </section>
   )

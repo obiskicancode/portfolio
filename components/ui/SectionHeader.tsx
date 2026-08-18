@@ -13,14 +13,14 @@ export default function SectionHeader({
 }: SectionHeaderProps) {
   return (
     <ScrollReveal className="mb-16">
-      <p className="mb-3 font-mono text-sm tracking-wider text-emerald-400">
+      <p className="mb-3 font-mono text-sm tracking-wider text-emerald-600">
         {overline}
       </p>
-      <h2 className="text-3xl font-semibold tracking-tight text-zinc-100 sm:text-4xl">
+      <h2 className="text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
         {title}
       </h2>
       {description && (
-        <p className="mt-4 max-w-xl text-lg leading-relaxed text-zinc-500">
+        <p className="mt-4 max-w-xl text-lg leading-relaxed text-zinc-600">
           {description}
         </p>
       )}

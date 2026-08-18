@@ -9,7 +9,7 @@ import { render_template } from '../../lib/nunjucks'
 import { validate_params } from '../../validators/validate_params'
 
 // send mail
-export const POST = await catch_async(async (request: NextRequest) => {
+export const POST = catch_async(async (request: NextRequest) => {
   const body = (await request.json()) as contactSchemaType
 
   const validated_data = validate_params(contactSchema, body)
