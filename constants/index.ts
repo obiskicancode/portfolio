@@ -96,7 +96,6 @@ export const projects: IProject[] = [
   },
   {
     name: 'Distributed Notification System',
-    abbreviation: 'DNS',
     image: 'dns.webp',
     description:
       'A scalable microservice system that can handle high volumes of notifications across multiple channels (Email, push)',
