@@ -4,6 +4,7 @@ const config = {
   SITE: {
     baseUrl: process.env.NEXT_PUBLIC_BASE_URL || 'https://obiski.vercel.app',
     contactAddress: process.env.NEXT_PUBLIC_CONTACT_ADDRESS || 'obiski15@gmail.com',
+    mailingAddress: process.env.NEXT_PUBLIC_MAILING_ADDRESS || 'obiski15@gmail.com',
   },
   ANALYTICS: {
     gaId: process.env.NEXT_PUBLIC_GA_ID || '',

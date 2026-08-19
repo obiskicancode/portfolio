@@ -3,32 +3,65 @@
 {% block title %}New Contact Request{% endblock %}
 
 {% block content %}
-<div class="header">
-  <h2 style="color: #10b981; font-weight: 600; font-size: 20px; letter-spacing: -0.5px;">
-    New Contact Request
-  </h2>
-  <p style="margin-top: 5px; color: #a1a1aa; font-size: 14px;">
-    You received a new message via your portfolio.
-  </p>
-</div>
+<!-- Badge -->
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+  <tr>
+    <td style="padding-bottom: 24px;">
+      <span style="display: inline-block; background-color: rgba(5, 150, 105, 0.08); color: #059669; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.5px; text-transform: uppercase;">
+        New Message
+      </span>
+    </td>
+  </tr>
+</table>
 
-<!-- Meta Info -->
-<div style="margin-bottom: 30px; background-color: rgba(255,255,255,0.03); padding: 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.04);">
-  <p style="margin-bottom: 10px; font-size: 14px;">
-    <span style="color: #71717a; width: 60px; display: inline-block;">Name:</span> 
-    <strong style="color: #fafafa;">{{ name }}</strong>
-  </p>
-  <p style="margin: 0; font-size: 14px;">
-    <span style="color: #71717a; width: 60px; display: inline-block;">Email:</span> 
-    <a href="mailto:{{ email }}">{{ email }}</a>
-  </p>
-</div>
+<!-- Heading -->
+<h2 style="font-size: 22px; font-weight: 700; color: #09090b; letter-spacing: -0.5px; margin-bottom: 6px;">
+  Contact Request
+</h2>
+<p style="font-size: 14px; color: #71717a; line-height: 1.6; margin-bottom: 28px;">
+  Someone reached out through your portfolio contact form.
+</p>
 
-<!-- Message Body -->
-<div style="margin-bottom: 30px;">
-  <h3 style="margin-bottom: 15px; color: #71717a; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Message</h3>
-  <div style="background-color: #18181b; padding: 24px; border-radius: 8px; border-left: 3px solid #10b981;">
-    <p style="white-space: pre-wrap; line-height: 1.6; font-size: 15px; color: #e4e4e7;">{{ message }}</p>
-  </div>
-</div>
+<!-- Sender Details -->
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #fafafa; border-radius: 8px; border: 1px solid #e4e4e7; margin-bottom: 28px;">
+  <tr>
+    <td style="padding: 20px 24px;">
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr>
+          <td style="padding-bottom: 12px;">
+            <p style="font-size: 11px; font-weight: 600; color: #a1a1aa; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px;">From</p>
+            <p style="font-size: 15px; font-weight: 600; color: #09090b;">{{ name }}</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-top: 1px solid #e4e4e7; padding-top: 12px;">
+            <p style="font-size: 11px; font-weight: 600; color: #a1a1aa; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px;">Email</p>
+            <a href="mailto:{{ email }}" style="font-size: 15px; color: #059669; text-decoration: none; font-weight: 500;">{{ email }}</a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<!-- Message -->
+<p style="font-size: 11px; font-weight: 600; color: #a1a1aa; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px;">Message</p>
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+  <tr>
+    <td style="background-color: #fafafa; padding: 24px; border-radius: 8px; border: 1px solid #e4e4e7; border-left: 3px solid #059669;">
+      <p style="white-space: pre-wrap; line-height: 1.7; font-size: 15px; color: #27272a;">{{ message }}</p>
+    </td>
+  </tr>
+</table>
+
+<!-- Reply CTA -->
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 28px;">
+  <tr>
+    <td>
+      <a href="mailto:{{ email }}" style="display: inline-block; background-color: #059669; color: #ffffff !important; font-weight: 600; text-decoration: none; padding: 12px 28px; border-radius: 8px; font-size: 14px; letter-spacing: -0.2px;">
+        Reply to {{ name }}
+      </a>
+    </td>
+  </tr>
+</table>
 {% endblock %}

@@ -64,8 +64,8 @@ export default function Navigation() {
             className="group relative text-lg font-semibold tracking-tight"
           >
             <span className="text-zinc-900">Obiski</span>
-            <span className="text-emerald-600 transition-colors group-hover:text-emerald-500">
-              .
+            <span className="text-emerald-600 text-xs align-top ml-1 transition-colors group-hover:text-emerald-500">
+              ●
             </span>
           </Link>
 

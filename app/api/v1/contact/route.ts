@@ -38,7 +38,7 @@ export const POST = catch_async(async (request: NextRequest) => {
   // send acknowledgment email (graceful degradation)
   try {
     await send_mail({
-      from: config.MAIL.account,
+      from: config.SITE.mailingAddress,
       to: validated_data.email as string,
       subject: `Message Received - Obi Emmanuel`,
       html: ack_template,
