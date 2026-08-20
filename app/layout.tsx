@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     siteName: 'Obiski Portfolio',
     images: [
       {
-        url: '/images/og-image.webp',
+        url: '/images/og-image-v1.webp',
         width: 1200,
         height: 630,
         alt: 'Obiski — Product Engineer & Full-Stack Developer',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: 'Obiski | Product Engineer',
     description:
       'Full-Stack Product Engineer building scalable systems and exceptional digital products.',
-    images: ['/images/og-image.webp'],
+    images: ['/images/og-image-v1.webp'],
     creator: '@obiskicancode',
   },
   robots: {
