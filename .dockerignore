@@ -1,0 +1,43 @@
+# Block dependencies and local builds
+node_modules
+.next
+out
+build
+
+# IDEs and system junk
+.git
+.gitignore
+.vscode
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Docker files
+Dockerfile*
+compose.yaml
+docker-compose*.yaml
+.dockerignore
+
+# Environment variables and secrets
+.env
+.env.local
+.env.production
+.env.development
+.env.production.local
+.env.development.local
+*.pem
+
+# Testing and configuration caches
+.eslintcache
+.stylelintcache
+.cache
